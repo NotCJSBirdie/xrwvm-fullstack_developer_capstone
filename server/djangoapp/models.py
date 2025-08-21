@@ -7,6 +7,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 
+
 # <HINT> Create a Car Make model `class CarMake(models.Model)`:
 # - Name
 # - Description
@@ -15,26 +16,26 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 class CarMake(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
-    # Add other fields as needed, for example: country_of_origin, founded_year
+    # Add other fields as needed, e.g. country_of_origin, founded_year
 
     def __str__(self):
         return self.name  # Returns the car make's name as its string representation
 
 
 # <HINT> Create a Car Model model `class CarModel(models.Model):`:
-# - Many-To-One relationship to Car Make model (One Car Make has many
-# Car Models, using ForeignKey field)
+# - Many-to-One relationship to Car Make model (One Car Make has many
+#   Car Models, using a ForeignKey field)
 # - Name
-# - Type (CharField with a choices argument to provide limited choices
-# such as Sedan, SUV, WAGON, etc.)
+# - Type (CharField with limited choices like Sedan, SUV, Wagon, etc.)
 # - Year (IntegerField) with min value 2015 and max value 2023
 # - Any other fields you would like to include in car model
 # - __str__ method to print a car make object
 class CarModel(models.Model):
-    car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)  # Many-to-One relationship
+    # Many-to-One relationship
+    car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
     dealer_id = models.IntegerField()  # Refers to dealer in Cloudant DB
     name = models.CharField(max_length=100)
-    
+
     CAR_TYPES = [
         ('SEDAN', 'Sedan'),
         ('SUV', 'SUV'),
@@ -42,16 +43,16 @@ class CarModel(models.Model):
         # Add more choices as needed
     ]
     type = models.CharField(max_length=10, choices=CAR_TYPES, default='SUV')
-    
+
     year = models.IntegerField(
         default=2023,
         validators=[
             MaxValueValidator(2023),
-            MinValueValidator(2015)
-        ]
+            MinValueValidator(2015),
+        ],
     )
-    # Add other fields as needed, for example: color, engine_type
-    
+    # Add other fields as needed, e.g. color, engine_type
+
     def __str__(self):
         # Prints a representation combining car make and model name
         return f"{self.car_make.name} {self.name}"
