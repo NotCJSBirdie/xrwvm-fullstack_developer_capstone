@@ -4,11 +4,9 @@ from django.db import models
 # from django.utils.timezone import now
 from django.core.validators import MaxValueValidator, MinValueValidator
 
-
 # Create your models here.
 
-
-# <HINT> Create a Car Make model `class CarMake(models.Model)`:
+# Create a Car Make model `class CarMake(models.Model)`:
 # - Name
 # - Description
 # - Any other fields you would like to include in car make model
@@ -25,9 +23,9 @@ class CarMake(models.Model):
         return self.name
 
 
-# <HINT> Create a Car Model model `class CarModel(models.Model):`:
+# Create a Car Model model `class CarModel(models.Model):`:
 # - Many-to-One relationship to Car Make model (One Car Make has many
-#   Car Models, using a ForeignKey field)
+# Car Models, using a ForeignKey field)
 # - Name
 # - Type (CharField with limited choices like Sedan, SUV, Wagon, etc.)
 # - Year (IntegerField) with min value 2015 and max value 2023
@@ -47,8 +45,8 @@ class CarModel(models.Model):
         ('WAGON', 'Wagon'),
         # Add more choices as needed
     ]
-    type = models.CharField(max_length=10, choices=CAR_TYPES, default='SUV')
 
+    type = models.CharField(max_length=10, choices=CAR_TYPES, default='SUV')
     year = models.IntegerField(
         default=2023,
         validators=[

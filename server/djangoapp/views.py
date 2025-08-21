@@ -6,9 +6,9 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import logging
 import json
-
 from .models import CarMake, CarModel
 from .restapis import get_request, analyze_review_sentiments, post_review
+
 # from .populate import initiate
 
 # Get an instance of a logger
@@ -16,8 +16,9 @@ logger = logging.getLogger(__name__)
 
 # Create your views here.
 
-
 # Create a `login_request` view to handle sign in request
+
+
 @csrf_exempt
 def login_user(request):
     data = json.loads(request.body)
@@ -32,6 +33,8 @@ def login_user(request):
 
 
 # Create a `logout_request` view to handle sign out request
+
+
 def logout_request(request):
     logout(request)
     data = {"userName": ""}
@@ -39,6 +42,8 @@ def logout_request(request):
 
 
 # Create a `registration` view to handle sign up request
+
+
 @csrf_exempt
 def registration(request):
     data = json.loads(request.body)
@@ -48,7 +53,6 @@ def registration(request):
     last_name = data['lastName']
     email = data['email']
     username_exist = False
-
     try:
         User.objects.get(username=username)
         username_exist = True
