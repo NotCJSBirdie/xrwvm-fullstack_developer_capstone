@@ -1,5 +1,6 @@
 from .models import CarMake, CarModel
 
+
 def initiate():
     car_make_data = [
         {"name": "NISSAN", "description": "Great cars. Japanese technology"},
@@ -30,85 +31,85 @@ def initiate():
             "name": "Qashqai",
             "type": "SUV",
             "year": 2023,
-            "car_make": car_make_instances[0],
+            "car_make": car_make_instances,
         },
         {
             "name": "XTRAIL",
             "type": "SUV",
             "year": 2023,
-            "car_make": car_make_instances[0],
+            "car_make": car_make_instances,
         },
         {
             "name": "A-Class",
             "type": "SUV",
             "year": 2023,
-            "car_make": car_make_instances[1],
+            "car_make": car_make_instances,
         },
         {
             "name": "C-Class",
             "type": "SUV",
             "year": 2023,
-            "car_make": car_make_instances[1],
+            "car_make": car_make_instances,
         },
         {
             "name": "E-Class",
             "type": "SUV",
             "year": 2023,
-            "car_make": car_make_instances[1],
+            "car_make": car_make_instances,
         },
         {
             "name": "A4",
             "type": "SUV",
             "year": 2023,
-            "car_make": car_make_instances[2],
+            "car_make": car_make_instances,
         },
         {
             "name": "A5",
             "type": "SUV",
             "year": 2023,
-            "car_make": car_make_instances[2],
+            "car_make": car_make_instances,
         },
         {
             "name": "A6",
             "type": "SUV",
             "year": 2023,
-            "car_make": car_make_instances[2],
+            "car_make": car_make_instances,
         },
         {
             "name": "Sorrento",
             "type": "SUV",
             "year": 2023,
-            "car_make": car_make_instances[3],
+            "car_make": car_make_instances,
         },
         {
             "name": "Carnival",
             "type": "SUV",
             "year": 2023,
-            "car_make": car_make_instances[3],
+            "car_make": car_make_instances,
         },
         {
             "name": "Cerato",
             "type": "Sedan",
             "year": 2023,
-            "car_make": car_make_instances[3],
+            "car_make": car_make_instances,
         },
         {
             "name": "Corolla",
             "type": "Sedan",
             "year": 2023,
-            "car_make": car_make_instances[4],
+            "car_make": car_make_instances,
         },
         {
             "name": "Camry",
             "type": "Sedan",
             "year": 2023,
-            "car_make": car_make_instances[4],
+            "car_make": car_make_instances,
         },
         {
             "name": "Kluger",
             "type": "SUV",
             "year": 2023,
-            "car_make": car_make_instances[4],
+            "car_make": car_make_instances,
         },
         # Add more CarModel instances as needed
     ]
