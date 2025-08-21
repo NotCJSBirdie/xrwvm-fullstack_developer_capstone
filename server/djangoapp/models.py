@@ -4,9 +4,7 @@ from django.db import models
 # from django.utils.timezone import now
 from django.core.validators import MaxValueValidator, MinValueValidator
 
-
 # Create your models here.
-
 
 # <HINT> Create a Car Make model `class CarMake(models.Model)`:
 # - Name
@@ -19,8 +17,8 @@ class CarMake(models.Model):
     # Add other fields as needed, e.g. country_of_origin, founded_year
 
     def __str__(self):
-        return self.name  # Returns the car make's name as its string representation
-
+        # Returns the car make's name as its string representation
+        return self.name
 
 # <HINT> Create a Car Model model `class CarModel(models.Model):`:
 # - Many-to-One relationship to Car Make model (One Car Make has many
